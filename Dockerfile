@@ -1,5 +1,4 @@
 FROM openjdk:11
-ARG JAR_FILE=build/libs/*.jar
 RUN mkdir /app
-COPY ${JAR_FILE} /app/app.jar
-ENTRYPOINT ["java","-jar","app.jar"]
+COPY build/libs/*.jar /app/spring-boot-application.jar
+ENTRYPOINT ["java","-jar","/app/spring-boot-application.jar"]
